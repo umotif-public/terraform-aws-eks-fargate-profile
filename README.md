@@ -10,10 +10,10 @@ Terraform 0.12. Pin module version to `~> v1.0`. Submit pull-requests to `master
 
 ```hcl
 module "eks-fargate-profile" {
-	cluster_name = "eks-test"
+  cluster_name = "eks-test"
   subnet_ids   = ["subnet-037c37205ce1cd88c", "subnet-0bb4e7a5c3120bc47", "subnet-07a58a249f38a1f58"]
 
-	namespace = "kube-system"
+  namespace = "kube-system"
   labels = {
     infrastructure = "fargate"
   }
