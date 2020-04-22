@@ -37,18 +37,28 @@ Module is to be used with Terraform > 0.12.
 Module managed by [Marcin Cuber](https://github.com/marcincuber) [LinkedIn](https://www.linkedin.com/in/marcincuber/).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| cluster\_name | The name of the EKS cluster | string | n/a | yes |
-| description | The description of the IAM Role used by fargate profile. | string | `"EKS cluster fargate profile IAM role."` | no |
-| enabled | Whether to create the resources. Set to `false` to prevent the module from creating any resources | bool | `"true"` | no |
-| fargate\_profile\_name | Name of the EKS Fargate Profile. If not provided, profile will be called `fargate-profile-namespace\_name`. | string | `""` | no |
-| labels | Key-value mapping of Kubernetes labels for selection | map(string) | `{}` | no |
-| namespace | Kubernetes namespace for which fargate profile will be used. | string | `""` | no |
-| subnet\_ids | Identifiers of private EC2 Subnets to associate with the EKS Fargate Profile. These subnets must have the following resource tag: kubernetes.io/cluster/cluster\_name. | list(string) | n/a | yes |
-| tags | Mapping of additional tags. | map(string) | `{}` | no |
+|------|-------------|------|---------|:--------:|
+| cluster\_name | The name of the EKS cluster | `string` | n/a | yes |
+| description | The description of the IAM Role used by fargate profile. | `string` | `"EKS cluster fargate profile IAM role."` | no |
+| enabled | Whether to create the resources. Set to `false` to prevent the module from creating any resources | `bool` | `true` | no |
+| fargate\_profile\_name | Name of the EKS Fargate Profile. If not provided, profile will be called `fargate-profile-namespace_name`. | `string` | `""` | no |
+| labels | Key-value mapping of Kubernetes labels for selection | `map(string)` | `{}` | no |
+| namespace | Kubernetes namespace for which fargate profile will be used. | `string` | `""` | no |
+| subnet\_ids | Identifiers of private EC2 Subnets to associate with the EKS Fargate Profile. These subnets must have the following resource tag: kubernetes.io/cluster/cluster\_name. | `list(string)` | n/a | yes |
+| tags | Mapping of additional tags. | `map(string)` | `{}` | no |
 
 ## Outputs
 
@@ -78,4 +88,7 @@ See LICENSE for full details.
 
 ```bash
 brew install pre-commit terraform-docs tflint
+
+brew tap git-chglog/git-chglog
+brew install git-chglog
 ```
