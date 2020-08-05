@@ -50,6 +50,6 @@ resource "aws_eks_fargate_profile" "main" {
 
   selector {
     namespace = var.namespace
-    labels    = var.labels
+    labels    = length(var.labels) > 0 ? var.labels : null
   }
 }
