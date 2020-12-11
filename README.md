@@ -1,3 +1,5 @@
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/umotif-public/terraform-aws-eks-fargate-profile?style=social)
+
 # terraform-aws-eks-fargate-profile
 
 Terraform module to configure an EKS Fargate Profile.
